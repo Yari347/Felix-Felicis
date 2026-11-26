@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Catálogo</title>
+    <link rel="stylesheet" href="css/EstiloMenu.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Menu</h1>
+        <p>Conoce nuestros productos</p>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Nosotros</a></li>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="Promociones.html">Promociones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="contenido">
+
+        <main class="contenedor" id="productos">
+
+            <article class="tarjeta">
+                <img src="img/chamoyadas.jpeg" alt="Chamoyadas">
+                <h2>Chamoyada</h2>
+                <p>Ricas chamoyadas con diferentes sabores de la casa.</p>
+                <p class="precio">$80.00</p>
+                <button onclick="agregar('Chamoyada', 80)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/Hamburguesa.jpeg" alt="Hamburguesa">
+                <h2>Hamburguesa</h2>
+                <p>Carne jugosa, queso americano, tocino y papas a la francesa.</p>
+                <p class="precio">$75.00</p>
+                <button onclick="agregar('Hamburguesa', 75)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/mini hotcakes.jpeg" alt="Mini hotcakes">
+                <h2>Mini hotcakes</h2>
+                <p>Estilo clásico con untables de la casa.</p>
+                <p class="precio">$100.00</p>
+                <button onclick="agregar('Mini hotcakes', 100)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/plato con manos.jpeg" alt="Bonneless">
+                <h2>Bonneless</h2>
+                <p>Excelente opción para agregar a tu pedido.</p>
+                <p class="precio">$160.00</p>
+                <button onclick="agregar('Bonneless', 160)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/Tacos.jpeg" alt="Tacos">
+                <h2>Tacos</h2>
+                <p>Tortilla hecha en casa con carne a elegir acompañada de nopales, cebolla caramelizada, papas asadas con doble tortilla.</p>
+                <p class="precio">$35.00</p>
+                <button onclick="agregar('Tacos', 35)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/BananaSplit.jpeg" alt="Banana split">
+                <h2>Banana split</h2>
+                <p>Oblea tostada con relleno de queso Filadelfia con plátano bañada de algún untable de preferencia.</p>
+                <p class="precio">$50.00</p>
+                <button onclick="agregar('Banana split', 50)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/Frappe.jpeg" alt="Frappe">
+                <h2>Frappe</h2>
+                <p>Frappe a base de leche con hielo granizado, textura cremosa decorado con crema batida y granillo.</p>
+                <p class="precio">$65.00</p>
+                <button onclick="agregar('Frappe', 65)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/Soda.jpeg" alt="Soda">
+                <h2>Soda Italiana</h2>
+                <p>Bebida burbujeante mezclada con agua gasificada, perlas explosivas y sabor a elegir.</p>
+                <p class="precio">$55.00</p>
+                <button onclick="agregar('Soda Italiana', 55)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/Bublee tea.jpeg" alt="Bublee Tea">
+                <h2>Bublee Tea</h2>
+                <p>Base de leche o yogurt con diferentes texturas masticables con perlas explosivas o tapioca.</p>
+                <p class="precio">$60.00</p>
+                <button onclick="agregar('Bublee Tea', 60)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/Cafe.jpeg" alt="Cafe">
+                <h2>Café</h2>
+                <p>Con leche o si lo prefiere solo con agua. Al gusto que usted prefiera, caliente o frío.</p>
+                <p class="precio">$45.00</p>
+                <button onclick="agregar('Café', 45)">Agregar</button>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/Gorditas.jpeg" alt="Gorditas">
+                <h2>Gorditas</h2>
+                <p>Masa de maíz hecha a mano rellena de chicharrón, cebolla, lechuga, cilantro, crema y queso.</p>
+                <p class="precio">$45.00</p>
+                <button onclick="agregar('Gorditas', 45)">Agregar</button>
+            </article>
+
+        </main>
+
+        <!-- LISTA DE COMPRAS -->
+
+        <aside class="lista-compras">
+
+            <h3>🛒 Tu Lista de Compras</h3>
+
+            <ul id="listaProductos">
+                <li>Tu lista está vacía. Agrega los productos de tu preferencia.</li>
+            </ul>
+
+            <p class="total">
+                Total: <span id="total">$0.00</span>
+            </p>
+
+            <button class="btn-pagar" onclick="pagar()">Pagar</button>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <section class="horarios">
+
+            <h3>Horarios</h3>
+
+            <p><strong>Horarios:</strong> Jueves a Domingo de 6:00 PM a 12:30 PM.</p>
+
+            <p><strong>¡Promoción del día!</strong> En la compra mínima de regalo un anillo de temporada con bolsita de dulces.</p>
+
+            <p>¡Síguenos en nuestras redes sociales para más sorpresas!</p>
+
+        </section>
+
+        <section id="contacto">
+
+            <h3>Contacto</h3>
+
+            <p><strong>Negocio:</strong> Felix Felicis</p>
+
+            <p><strong>Teléfono:</strong> 55 3147 7863</p>
+
+            <p><strong>Correo:</strong> felixfelicis2402@gmail.com</p>
+
+            <p>
+                <strong>
+                    <a href="https://maps.app.goo.gl/RXEpuy8UTJZSbnDA7?g_st=ic" target="_blank">Dirección</a>:
+                </strong>
+                Oceano de las Tempestades 361, Amp. Selene, Tlahuac, 13430 Ciudad de México, CDMX.
+            </p>
+
+            <p>
+                <strong>
+                    <a href="https://www.instagram.com/felix_felicis2402?igsh=MTJ3a3l5dmdza2oxbg==" target="_blank">Instagram</a>
+                </strong>
+            </p>
+
+            <p>
+                <strong>
+                    <a href="https://www.facebook.com/share/1DNjs97FNY/?mibextid=wwXIfr" target="_blank">Facebook</a>
+                </strong>
+            </p>
+
+            <p>
+                <strong>
+                    <a href="https://www.tiktok.com/@felixfelicis863" target="_blank">TikTok</a>
+                </strong>
+            </p>
+
+        </section>
+
+    </footer>
+
+    <script>
+
+        let carrito = [];
+
+        function agregar(nombre, precio) {
+
+            const productoExistente = carrito.find(p => p.nombre === nombre);
+
+            if (productoExistente) {
+                productoExistente.cantidad++;
+            } else {
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+            }
+
+            mostrarLista();
+        }
+
+        function mostrarLista() {
+
+            const lista = document.getElementById('listaProductos');
+            const totalSpan = document.getElementById('total');
+
+            if (carrito.length === 0) {
+
+                lista.innerHTML = '<li>Tu lista está vacía. Agrega productos.</li>';
+                totalSpan.textContent = '$0.00';
+
+                return;
+            }
+
+            let total = 0;
+            let html = '';
+
+            carrito.forEach(producto => {
+
+                const subtotal = producto.precio * producto.cantidad;
+
+                total += subtotal;
+
+                html += '<li>' + producto.nombre + ' x' + producto.cantidad +
+                        ' <span>=$' + subtotal.toFixed(2) + '</span></li>';
+            });
+
+            lista.innerHTML = html;
+            totalSpan.textContent = '$' + total.toFixed(2);
+        }
+
+        function pagar() {
+
+            if (carrito.length === 0) {
+
+                alert('Tu lista está vacía. Agrega productos primero.');
+
+                return;
+            }
+
+            let resumen = 'Tu pedido:\n';
+            let total = 0;
+
+            carrito.forEach(producto => {
+
+                const subtotal = producto.precio * producto.cantidad;
+
+                total += subtotal;
+
+                resumen += producto.nombre + ' x' + producto.cantidad +
+                           ' = $' + subtotal.toFixed(2) + '\n';
+            });
+
+            resumen += '\nTotal: $' + total.toFixed(2);
+
+            alert(resumen);
+
+            carrito = [];
+
+            mostrarLista();
+        }
+
+    </script>
+
+</body>
+</html>
+
+

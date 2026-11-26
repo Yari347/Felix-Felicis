@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flelix Felicis - Comida Rápida</title>
+    
+   <link rel="stylesheet" href="css/estilos.css.css">
+ >
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/icono.jpeg" alt="Logo Felix Felicis" class="logo">
+            <h1>Felix Felicis</h1>
+            <p>¡Suerte Liquida!</p>
+        </div>
+        
+        <nav id="menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="Menu.html">Menú / Servicios</a></li>
+                <li><a href="Promociones.html">Promociones</a></li>
+                
+                
+            </ul>
+        </nav>
+
+        
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    </header>
+
+    <main>
+        
+        <section id="inicio">
+            <h2>Bienvenidos a Felix Felicis</h2>
+            <p>Disfruta de los mejores platillos preparados al momento con ingredientes frescos y de la más alta calidad.</p>
+
+        
+            <button class="btn-bienvenida" onclick="mostrarBienvenida()">¡Conócenos!</button>
+        </section>
+
+       
+        <section class="slider">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="img/lugar .jpeg" alt="lugar">
+                    <div class="slide-text">
+                        <h3>Nuestro estableciemiento interno</h3>
+                        <p>Tematica de Harry Poter</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/Lugar1.jpeg" alt="Hamburguesas con tocino y papas">
+                    <div class="slide-text">
+                        <h3>Establecimineto</h3>
+                        <p>Estamos para recibirte</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/Lugar2.jpeg" alt="Bonneless">
+                    <div class="slide-text">
+                        <h3>Sencillo pero bonito</h3>
+                        <p> </p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+            <button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+
+            <div class="dots">
+                <span class="dot active" onclick="irASlide(0)"></span>
+                <span class="dot" onclick="irASlide(1)"></span>
+                <span class="dot" onclick="irASlide(2)"></span>
+            </div>
+        </section>
+        <!-- FIN DEL SLIDER -->
+
+        <article id="nosotros">
+            <h2>Nuestra Historia</h2>
+            <p>Felix Felicis nació con la misión de ofrecer postres deliciosos, accesible y con un sazón único en la zona de Tláhuac. Nos esforzamos cada día para brindarte una experiencia inolvidable en cada bocado, con la finalidad de darle un mayor alcance a las personas que no pueden pagar por el mismo servicio pero mas caro, se busca darle la oportunidad de que puedan hacerlo.</p>
+        </article>
+
+        <!-- FORMULARIO INTERACTIVO -->
+        <section class="formulario">
+            <h2>Envíanos un mensaje</h2>
+            <form id="formContacto" onsubmit="return enviarFormulario(event)">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Tu nombre">
+                
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" placeholder="tucorreo@ejemplo.com">
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="mensajeExito" class="oculto">¡Gracias! Tu mensaje fue enviado correctamente. 😊</p>
+        </section>
+
+    </main>
+
+    <aside>
+        <h3> Horarios</h3>
+        <p><strong>Horarios:</strong> Jueves a Domingo de 6:00 PM a 12:30 PM.</p>
+        <p><strong>¡Promoción del día!</strong> En la compra minima de regalo un anillo de temporada con bolsita de dulces.</p>
+        <p>¡Síguenos en nuestras redes sociales para más sorpresas!</p>
+    </aside>
+
+    <footer id="contacto">
+        <h3>Contacto</h3>
+        <p><strong>Negocio:</strong> Felix Felicis</p>
+        <p><strong>Teléfono:</strong> 55 3147 7863</p>
+        <p><strong>Correo:</strong> felixfelicis2402@gmail.com</p>
+        
+        <p><strong><a href="https://maps.app.goo.gl/RXEpuy8UTJZSbnDA7?g_st=ic" target="_blank">Dirección</a>:</strong> Oceano de las Tempestades 361, Amp. Selene, Tlahuac, 13430 Ciudad de México, CDMX.</p>
+        <p><strong><a href="https://www.instagram.com/felix_felicis2402?igsh=MTJ3a3l5dmdza2oxbg==">Instagram</a></strong></p>
+        <p><strong><a href="https://www.facebook.com/share/1DNjs97FNY/?mibextid=wwXIfr">Facebook</a></strong></p>
+        <p><strong><a href="https://www.tiktok.com/@felixfelicis863?_r=1&_d=f55e99074c0m61&sec_uid=MS4wLjABAAAANvTuSax7vzeP313TZFrgUDKjZGfFw4YsPufjK46YPTtG0yG5NrtM2NuvioV313Fe&share_author_id=7556816651242505217&sharer_language=es&source=h5_m&u_code=eeahe398ile4cm&timestamp=1793977814&user_id=7373571640448435206&sec_user_id=MS4wLjABAAAAYtyteFhJ-nlu_PzxhVEWvYPIkMmwZBYFMO6fpd2C0vy5H-9fI2J7fKqR4M6IL5Ca&item_author_type=2&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7703941511780222738&share_link_id=0df6d3c2-b6ad-437b-bd6f-02d452b61b5c&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b6880%2Cb2878&social_share_type=5&share_enter_from=others_homepage&item_author_type=2&enable_checksum=1">Tiktok</a></strong></p>
+        
+
+
+   
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('abierto');
+        }
+
+       
+        function mostrarBienvenida() {
+            alert('¡Bienvenido a Felix Felicis! 🪄 Somos tu poción de la suerte en Tláhuac. Tacos, hamburguesas y hot dogs preparados al momento. ¡Ven y prueba la magia!');
+        }
+
+       
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function mostrarSlide(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+
+            slides.forEach((s, i) => {
+                s.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+
+        function cambiarSlide(direccion) {
+            slideIndex += direccion;
+            mostrarSlide(slideIndex);
+        }
+
+        function irASlide(n) {
+            slideIndex = n;
+            mostrarSlide(slideIndex);
+        }
+
+        setInterval(() => { slideIndex++; mostrarSlide(slideIndex); }, 4000);
+        mostrarSlide(slideIndex);
+
+        // ===== 4. CALCULADORA DE PRECIOS =====
+        function calcularTotal() {
+            const tacos = parseInt(document.getElementById('cantTacos').value) || 0;
+            const hamburguesas = parseInt(document.getElementById('cantHamburguesas').value) || 0;
+            const hotdogs = parseInt(document.getElementById('cantHotdogs').value) || 0;
+
+            const total = (tacos * 15) + (hamburguesas * 45) + (hotdogs * 25);
+
+            document.getElementById('resultadoCalculo').textContent =
+                'Tu orden: ' + tacos + ' tacos, ' + hamburguesas + ' hamburguesas, ' + hotdogs + ' hot dogs. Total: $' + total;
+        }
+
+        // ===== 5. FORMULARIO INTERACTIVO =====
+        function enviarFormulario(evento) {
+            evento.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            if (nombre === '' || correo === '' || mensaje === '') {
+                alert('Por favor llena todos los campos.');
+                return false;
+            }
+
+            if (!correo.includes('@')) {
+                alert('Escribe un correo válido.');
+                return false;
+            }
+
+            document.getElementById('mensajeExito').classList.remove('oculto');
+            document.getElementById('formContacto').reset();
+            return false;
+        }
+
+
+        
+    </script>
+
+</body>
+</html>
+

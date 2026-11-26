@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promociones del Mes - Felix Felicis</title>
+    <link rel="stylesheet" href="css/EstiloPromo.css">
+   
+
+</head>
+<body>
+
+    <header class="Encabezado">
+        <h1> Promociones del Mes </h1>
+        <p>¡Aprovecha las ofertas de Felix Felicis antes de que se acaben!</p>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Nosotros</a></li>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="Promociones.html">Promociones</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Promociones -->
+        <section class="promos">
+            <div class="promo">
+                <div class="promo-icon"></div>
+                <h3>Regalo de temporada</h3>
+                <p class="promo-detalle">En la compra mínima, llévate de regalo un <strong>anillo de temporada</strong> con bolsita de dulces.</p>
+                <p class="promo-valor">¡Totalmente gratis!</p>
+                <button class="btn-reclamar" onclick="reclamarPromo('Regalo de temporada')">Reclamar promoción</button>
+            </div>
+
+            <div class="promo destacada">
+                <span class="etiqueta">MÁS PEDIDA</span>
+                <div class="promo-icon"></div>
+                <h3>Combo Familiar</h3>
+                <p class="promo-detalle">2 hamburguesas con papas + 2 bebidas + orden de tacos. El combo perfecto para compartir.</p>
+                <p class="promo-valor"><del>$278</del> <strong>$229</strong></p>
+                <button class="btn-reclamar" onclick="reclamarPromo('Combo Familiar')">Reclamar promoción</button>
+            </div>
+
+            <div class="promo">
+                <div class="promo-icon"></div>
+                <h3>Sabado de Tacos</h3>
+                <p class="promo-detalle">Todos los sabados, 3 tacos por el precio de 2. Bistec, pastor o longaniza.</p>
+                <p class="promo-valor">3x2 todos los sabados</p>
+                <button class="btn-reclamar" onclick="reclamarPromo('Martes de Tacos')">Reclamar promoción</button>
+            </div>
+        </section>
+
+        <!-- Mensaje de confirmación -->
+        <p id="mensajePromo" class="oculto"></p>
+    </main>
+
+    <footer>
+        <aside>
+            <h3> Horarios</h3>
+            <p><strong>Horarios:</strong> Jueves a Domingo de 6:00 PM a 12:30 PM.</p>
+            <p><strong>¡Promoción del día!</strong> En la compra minima de regalo un anillo de temporada con bolsita de dulces.</p>
+            <p>¡Síguenos en nuestras redes sociales para más sorpresas!</p>
+        </aside>
+    
+        <footer id="contacto">
+            <h3>Contacto</h3>
+            <p><strong>Negocio:</strong> Felix Felicis</p>
+            <p><strong>Teléfono:</strong> 55 3147 7863</p>
+            <p><strong>Correo:</strong> felixfelicis2402@gmail.com</p>
+            
+            <p><strong><a href="https://maps.app.goo.gl/RXEpuy8UTJZSbnDA7?g_st=ic" target="_blank">Dirección</a>:</strong> Oceano de las Tempestades 361, Amp. Selene, Tlahuac, 13430 Ciudad de México, CDMX.</p>
+            <p><strong><a href="https://www.instagram.com/felix_felicis2402?igsh=MTJ3a3l5dmdza2oxbg==">Instagram</a></strong></p>
+            <p><strong><a href="https://www.facebook.com/share/1DNjs97FNY/?mibextid=wwXIfr">Facebook</a></strong></p>
+            <p><strong><a href="https://www.tiktok.com/@felixfelicis863?_r=1&_d=f55e99074c0m61&sec_uid=MS4wLjABAAAANvTuSax7vzeP313TZFrgUDKjZGfFw4YsPufjK46YPTtG0yG5NrtM2NuvioV313Fe&share_author_id=7556816651242505217&sharer_language=es&source=h5_m&u_code=eeahe398ile4cm&timestamp=1793977814&user_id=7373571640448435206&sec_user_id=MS4wLjABAAAAYtyteFhJ-nlu_PzxhVEWvYPIkMmwZBYFMO6fpd2C0vy5H-9fI2J7fKqR4M6IL5Ca&item_author_type=2&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7703941511780222738&share_link_id=0df6d3c2-b6ad-437b-bd6f-02d452b61b5c&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b6880%2Cb2878&social_share_type=5&share_enter_from=others_homepage&item_author_type=2&enable_checksum=1">Tiktok</a></strong></p>
+    </footer>
+
+    <script>
+        // ===== 1. CONTADOR REGRESIVO =====
+        // Fecha de fin de la promoción (fin de mes)
+        const finPromo = new Date('2026-11-30T23:59:59');
+
+        function actualizarContador() {
+            const ahora = new Date();
+            const diferencia = finPromo - ahora;
+
+            if (diferencia <= 0) {
+                document.getElementById('dias').textContent = 0;
+                document.getElementById('horas').textContent = 0;
+                document.getElementById('minutos').textContent = 0;
+                document.getElementById('segundos').textContent = 0;
+                return;
+            }
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById('dias').textContent = dias;
+            document.getElementById('horas').textContent = horas;
+            document.getElementById('minutos').textContent = minutos;
+            document.getElementById('segundos').textContent = segundos;
+        }
+
+        // Actualizar cada segundo
+        setInterval(actualizarContador, 1000);
+        actualizarContador();
+
+        // ===== 2. RECLAMAR PROMOCIÓN =====
+        function reclamarPromo(nombrePromo) {
+            const nombre = prompt('¡Genial que quieras la ' + nombrePromo + '! 🎉\n\n¿Cuál es tu nombre?');
+
+            if (nombre === null || nombre.trim() === '') {
+                alert('No se pudo reclamar. Escribe tu nombre para continuar.');
+                return;
+            }
+
+            const mensaje = document.getElementById('mensajePromo');
+            mensaje.classList.remove('oculto');
+            mensaje.textContent = '🎊 ¡' + nombre + ', tu promoción "' + nombrePromo + '" está reservada! Menciónala al hacer tu pedido al 55 3147 7863. ¡Te esperamos!';
+
+            // Ocultar el mensaje después de 6 segundos
+            setTimeout(() => {
+                mensaje.classList.add('oculto');
+            }, 8000);
+        }
+    </script>
+
+</body>
+</html>
